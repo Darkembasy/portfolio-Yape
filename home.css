@@ -32,6 +32,10 @@ nav ul li a {
     color: #000;
     font-weight: bold;
 }
+nav ul li a:hover {
+   text-decoration: underline;
+}
+
 
 .contact {
     font-size: 14px;
@@ -73,8 +77,20 @@ button {
     border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease; 
 }
 
+button:hover {
+    background-color: #222; 
+    transform: translateY(-2px); 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+button:active {
+    transform: translateY(0); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
 .image-content img {
     width: 400px;
     height: 500px;
