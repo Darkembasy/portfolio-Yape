@@ -13,6 +13,7 @@ header {
     padding: 20px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative; 
 }
 
 .logo {
@@ -33,7 +34,7 @@ nav ul li a {
     font-weight: bold;
 }
 nav ul li a:hover {
-   text-decoration: underline;
+    text-decoration: underline;
 }
 
 
@@ -77,19 +78,19 @@ button {
     border-radius: 30px;
     cursor: pointer;
     font-size: 16px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.3s ease;
 }
 
 button:hover {
-    background-color: #222; 
-    transform: translateY(-2px); 
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+    background-color: #222;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 button:active {
-    transform: translateY(0); 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 .image-content img {
     width: 400px;
@@ -108,8 +109,8 @@ button:active {
 }
 
 .social-icons a {
-    font-size: 35px; 
-    color: black; 
+    font-size: 35px;
+    color: black;
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -118,18 +119,20 @@ button:active {
 }
 
 
-
+.hamburger {
+    display: none;
+}
 
 @media (max-width: 768px) {
     .hero {
-        flex-direction: column; 
-        text-align: center; 
+        flex-direction: column;
+        text-align: center;
         padding: 30px;
     }
 
     .text-content {
-        max-width: 80%; 
-        margin-bottom: 30px; 
+        max-width: 80%;
+        margin-bottom: 30px;
     }
 
     .intro {
@@ -148,29 +151,6 @@ button:active {
 
 
 @media (max-width: 480px) {
-    header {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 15px;
-    }
-
-    nav ul {
-        flex-direction: column; 
-        align-items: center;
-        margin-top: 10px;
-        gap: 10px;
-    }
-
-    nav ul li a {
-        font-size: 16px;
-    }
-
-    .contact {
-        margin-top: 10px;
-        font-size: 12px;
-    }
-
     .hero {
         padding: 20px;
     }
@@ -199,5 +179,55 @@ button:active {
 
     .social-icons a {
         font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        display: none; 
+    }
+
+    nav ul li {
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+    }
+
+    nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .contact {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    nav.responsive ul {
+        display: flex;
+    }
+    .hamburger {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        cursor: pointer;
     }
 }
