@@ -177,3 +177,74 @@ main h1 {
         margin-bottom: 15px;
     }
 }
+
+.image-container {
+    cursor: pointer; /* Indicate it's clickable */
+    overflow: hidden; /* Prevent potential overflow */
+    border-radius: 5px; /* Match image border-radius */
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below the image */
+    transition: transform 0.3s ease-in-out; /* Optional: for a smooth zoom effect on hover */
+}
+
+.image-container img:hover {
+    transform: scale(1.05); /* Optional: slight zoom on hover */
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (the image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%; /* Adjust as needed */
+    max-width: 700px;
+    height: auto;
+}
+
+/* The Close Button */
+.close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Adjust project image styling slightly to accommodate the container */
+.project img {
+    max-width: 100%; /* Make it responsive within the container */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    display: block; /* Ensure it fills the container properly */
+}
+
+@media (max-width: 768px) {
+    /* Existing media queries remain the same */
+}

@@ -6,7 +6,7 @@
     <title>Johnrey Yape</title>
     <link rel="stylesheet" href="project.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="icon" type="image/png"  href="icon.png">
+    <link rel="icon" type="image/png"   href="icon.png">
 </head>
 <body>
     <header>
@@ -27,17 +27,27 @@
         <h1>My Projects! 🌟</h1>
 
         <div class="project">
-            <img src="project1.jpg" alt="Project 1">
+            <div class="image-container"> <img id="studybudImage" src="studybud.png" alt="Project 1"></div>
             <h2>DjangoProject</h2>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatum eligendi rerum ab accusamus quidem! Totam, accusantium id, libero officiis voluptas odio expedita quaerat minus quia architecto amet eveniet quidem eligendi?</p>
+            <p>This project is a study group finder web app built following a YouTube tutorial. It was a hands-on exercise in creating a Django application from scratch. I set up the project, designed database models (study rooms, user profiles), created views, and implemented dynamic templates. Key features include user login, study room creation/joining, and real-time chat. This process improved my understanding of Django's MVT architecture, URL routing, form handling, and database management. The visual shows the working web app for students to connect</p>
             <a href="">More</a>
         </div>
 
         <div class="project">
-            <img src="project2.jpg" alt="Project 2">
-            <h2>Mobile App</h2>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Natus dignissimos voluptatum harum eaque. Saepe nulla, suscipit, dolorem soluta hic, voluptates accusamus excepturi aliquam velit voluptatem obcaecati illo repudiandae maiores impedit.</p>
+            <div class="image-container"> <img id="tourismImage" src="TourismPage.png" alt="Project 2"></div>
+            <h2>Tourism Website</h2>
+            <p>My website is for local and foreign visitors. The website is more about viewing the history of the Philippines and the beautiful places like Baguio, Ifugao, Boracay, etc.</p>
             <a href="">More</a>
+        </div>
+
+        <div id="studybudModal" class="modal">
+            <span class="close-button">&times;</span>
+            <img class="modal-content" id="zoomedStudybud">
+        </div>
+
+        <div id="tourismModal" class="modal">
+            <span class="close-button">&times;</span>
+            <img class="modal-content" id="zoomedTourism">
         </div>
 
     </main>
@@ -48,6 +58,54 @@
 
         hamburger.addEventListener('click', () => {
             nav.classList.toggle('responsive');
+        });
+
+        // Get the image, modal, and close button elements for the first image
+        const studybudImage = document.getElementById('studybudImage');
+        const studybudModal = document.getElementById('studybudModal');
+        const zoomedStudybud = document.getElementById('zoomedStudybud');
+        const studybudCloseButton = studybudModal.querySelector('.close-button'); // Get close button within this modal
+
+        // Add a click event listener to the first image
+        studybudImage.addEventListener('click', () => {
+            studybudModal.style.display = 'block'; // Show the modal
+            zoomedStudybud.src = studybudImage.src; // Set the source of the zoomed image
+        });
+
+        // Add a click event listener to the close button of the first modal
+        studybudCloseButton.addEventListener('click', () => {
+            studybudModal.style.display = 'none'; // Hide the modal
+        });
+
+        // Close the first modal if the user clicks outside the image
+        window.addEventListener('click', (event) => {
+            if (event.target === studybudModal) {
+                studybudModal.style.display = 'none';
+            }
+        });
+
+        // Get the image, modal, and close button elements for the second image
+        const tourismImage = document.getElementById('tourismImage');
+        const tourismModal = document.getElementById('tourismModal');
+        const zoomedTourism = document.getElementById('zoomedTourism');
+        const tourismCloseButton = tourismModal.querySelector('.close-button'); // Get close button within this modal
+
+        // Add a click event listener to the second image
+        tourismImage.addEventListener('click', () => {
+            tourismModal.style.display = 'block'; // Show the modal
+            zoomedTourism.src = tourismImage.src; // Set the source of the zoomed image
+        });
+
+        // Add a click event listener to the close button of the second modal
+        tourismCloseButton.addEventListener('click', () => {
+            tourismModal.style.display = 'none'; // Hide the modal
+        });
+
+        // Close the second modal if the user clicks outside the image
+        window.addEventListener('click', (event) => {
+            if (event.target === tourismModal) {
+                tourismModal.style.display = 'none';
+            }
         });
     </script>
 </body>
