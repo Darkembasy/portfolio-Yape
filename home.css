@@ -5,6 +5,7 @@ body {
     background-color: #fff;
     color: #000;
 }
+
 header {
     display: flex;
     justify-content: space-between;
@@ -13,27 +14,29 @@ header {
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+
 .logo {
     font-size: 20px;
     font-weight: bold;
 }
+
 nav ul {
     list-style: none;
     display: flex;
     gap: 20px;
     padding: 0;
 }
-nav ul li {
-    display: inline;
-}
+
 nav ul li a {
     text-decoration: none;
     color: #000;
     font-weight: bold;
 }
+
 .contact {
     font-size: 14px;
 }
+
 .hero {
     display: flex;
     align-items: center;
@@ -41,22 +44,27 @@ nav ul li a {
     padding: 50px;
     padding-top: 30px;
 }
+
 .text-content {
     max-width: 50%;
 }
+
 .intro {
     font-size: 45px;
     font-weight: bold;
 }
+
 h1 {
     font-size: 40px;
     line-height: 1.2;
     color: #777;
 }
+
 h1 span {
     text-decoration: underline;
     text-decoration-color: #b3e5fc;
 }
+
 button {
     background-color: #000;
     color: #fff;
@@ -66,14 +74,14 @@ button {
     cursor: pointer;
     font-size: 16px;
 }
+
 .image-content img {
-    width: 400px; 
-    height: 500px; 
-    object-fit: cover; 
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
     display: block;
     border-radius: 50%;
     background-color: #777;
-
 }
 
 .social-icons {
@@ -84,8 +92,8 @@ button {
 }
 
 .social-icons a {
-    font-size: 35px; /* Adjust icon size */
-    color: black; /* White icons */
+    font-size: 35px; 
+    color: black; 
     transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
@@ -93,3 +101,87 @@ button {
     transform: scale(1.2);
 }
 
+
+
+
+@media (max-width: 768px) {
+    .hero {
+        flex-direction: column; 
+        text-align: center; 
+        padding: 30px;
+    }
+
+    .text-content {
+        max-width: 80%; 
+        margin-bottom: 30px; 
+    }
+
+    .intro {
+        font-size: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .image-content img {
+        width: 250px;
+        height: 300px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    nav ul {
+        flex-direction: column; 
+        align-items: center;
+        margin-top: 10px;
+        gap: 10px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+    }
+
+    .contact {
+        margin-top: 10px;
+        font-size: 12px;
+    }
+
+    .hero {
+        padding: 20px;
+    }
+
+    .text-content {
+        max-width: 95%;
+    }
+
+    .intro {
+        font-size: 24px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 15px 30px;
+        font-size: 14px;
+    }
+
+    .image-content img {
+        width: 200px;
+        height: 250px;
+    }
+
+    .social-icons a {
+        font-size: 28px;
+    }
+}
