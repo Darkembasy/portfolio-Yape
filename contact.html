@@ -7,20 +7,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="contact.css">
-    <link rel="icon" type="image/png"  href="icon.png">
+    <link rel="icon" type="image/png"   href="icon.png">
 </head>
 <body>
     <div class="container">
         <h1>Let's Connect! 📧</h1>
         <p>Got questions or just want to say hi? I'd be thrilled to hear from you!</p>
         <div class="contact-form">
-            <form action="#">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email Address">
-            <input type="text" placeholder="Subject of Inquiry">
-            <textarea placeholder="Tell me what's on your mind!" rows="5"></textarea>
+            <form id="contactForm" action="#">
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Email Address">
+            <input type="text" id="subject" placeholder="Subject of Inquiry">
+            <textarea id="message" placeholder="Tell me what's on your mind!" rows="5"></textarea>
 
-            <button class="btn">Send Your Message <i class='bx bxs-send' ></i></button>
+            <button type="submit" class="btn">Send Your Message <i class='bx bxs-send' ></i></button>
             </form>
             <a class="home" href="home.html"><i class='bx bx-arrow-back' ></i> Back to Home</a>
         </div>
@@ -31,5 +31,19 @@
             <a class="social" href=""><i class='bx bxl-github' ></i></a>
         </div>
     </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            alert('Message sent successfully!');
+            
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('subject').value = '';
+            document.getElementById('message').value = '';
+
+           
+        });
+    </script>
 </body>
 </html>
